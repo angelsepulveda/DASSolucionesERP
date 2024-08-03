@@ -1,0 +1,14 @@
+﻿<div>
+    <ul>
+        @if (ViewModel.DocumentTypes != null)
+        {
+            @foreach (var documentType in ViewModel.DocumentTypes)
+            {
+                <li>
+                    <span>@documentType.Id</span>
+                    <span>@documentType.Name</span>
+                </li>
+            }
+        }
+    </ul>
+</div>
