@@ -1,0 +1,46 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace DASSoluciones.AppERP.DBAdmin.Core.Migrations
+{
+    /// <inheritdoc />
+    public partial class DocumentTypeMigrations : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.CreateTable(
+                name: "DocumentType",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "char(36)", nullable: false),
+                    Name = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: false),
+                    Code = table.Column<string>(type: "varchar(10)", maxLength: 10, nullable: true),
+                    Description = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedBy = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedBy = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DocumentType", x => x.Id);
+                });
+
+            migrationBuilder.InsertData(
+                table: "DocumentType",
+                columns: new[] { "Id", "Code", "CreatedAt", "CreatedBy", "Description", "Name", "Status", "UpdatedAt", "UpdatedBy" },
+                values: new object[] { "09d3af04-b40b-4909-aff1-9f9ae08cd91c", "001", null, null, "Ejemplo descripcion", "RUN", true, null, null });
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "DocumentType");
+        }
+    }
+}
