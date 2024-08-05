@@ -1,9 +1,14 @@
-﻿namespace DASSoluciones.AppErp.Frontend.RazorViews.Modules.Settings.DocumentTypes.Components;
+﻿using Radzen;
+
+namespace DASSoluciones.AppErp.Frontend.RazorViews.Modules.Settings.DocumentTypes.Components;
 
 public partial class DocumentType : ComponentBase
 {
     [Inject]
-    public GetDocumentTypesViewModel ViewModel { get; set; }
+    public GetAllDocumentTypesViewModel ViewModel { get; set; }
+   
+
+    public PagerPosition pagerPosition = PagerPosition.Bottom;
 
     protected override async Task OnInitializedAsync()
     {

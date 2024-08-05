@@ -1,15 +1,11 @@
 ﻿<div>
-    <ul>
-        @if (ViewModel.DocumentTypes != null)
-        {
-            @foreach (var documentType in ViewModel.DocumentTypes)
-            {
-                <li>
-                    <span>@documentType.Id</span>
-                    <span>@documentType.Name</span>
-                    <RadzenButton Text="Hola Mundo" ButtonStyle="ButtonStyle.Secondary"/>
-                </li>
-            }
-        }
-    </ul>
+    <RadzenStack Gap="1rem p-5">
+        <RadzenDataGrid Data="@ViewModel.DocumentTypes" PagerPosition="@pagerPosition" AllowPaging="true" AllowSorting="true">
+            <Columns>
+                <RadzenDataGridColumn Property="Name" Title="Nombre" />
+                <RadzenDataGridColumn Property="Code" Title="Código" />
+                <RadzenDataGridColumn Property="Description" Title="Descripción" />
+            </Columns>
+        </RadzenDataGrid>
+    </RadzenStack>
 </div>

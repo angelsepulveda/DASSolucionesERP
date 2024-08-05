@@ -5,6 +5,7 @@ public static class DependencyContainer
     public static IServiceCollection AddDocumentTypesViewModels(this IServiceCollection services)
     {
         services.AddScoped<GetDocumentTypesViewModel>();
+        services.AddScoped<GetAllDocumentTypesViewModel>();
         
         return services;
     }

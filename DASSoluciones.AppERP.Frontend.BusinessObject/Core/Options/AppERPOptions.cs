@@ -2,5 +2,6 @@
 
 public class AppERPOptions
 {
-    
+    public const string SectionKey = nameof(AppERPOptions);
+    public string WebApiBaseAddress { get; set; } = null!;
 }

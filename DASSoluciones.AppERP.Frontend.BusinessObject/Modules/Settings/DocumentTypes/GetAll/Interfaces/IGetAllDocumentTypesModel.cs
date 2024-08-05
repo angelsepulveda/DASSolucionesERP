@@ -2,5 +2,5 @@
 
 public interface IGetAllDocumentTypesModel
 {
-    
+    Task<IEnumerable<GetAllDocumentTypesDto>> HandleAsync();
 }

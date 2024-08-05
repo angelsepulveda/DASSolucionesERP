@@ -2,10 +2,12 @@
 
 public static class DependencyContainer
 {
-    public static IServiceCollection AddModels(this IServiceCollection services)
+    public static IServiceCollection AddModels(this IServiceCollection services, Action<HttpClient> configureHttpClient,
+        Action<IHttpClientBuilder> httpClientBuilder)
+
     {
-        services.AddSettingModels();
-        
+        services.AddSettingModels(configureHttpClient,httpClientBuilder);
+
         return services;
     }
 }
